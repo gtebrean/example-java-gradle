@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies, run tests, and collect coverage
         run: gradle build
       - name: Coverage Report
-        run: ./gradlew jacocoTestReport
+        run: gradle jacocoTestReport
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
