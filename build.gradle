@@ -17,14 +17,24 @@ dependencies {
 
 jacocoTestReport {
 
+
+    dependsOn test
     reports {
         xml {
             enabled true
+            destination file("${buildDir}/reports/jacoco/report.xml")
         }
         html {
             enabled false
         }
     }
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
 
 }
 

@@ -18,5 +18,9 @@ jobs:
           java-version: 1.8
       - name: Install dependencies, run tests, and collect coverage
         run: gradle build
+      - name: Coverage Report
+        run: ./gradlew jacocoTestReport
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: true
