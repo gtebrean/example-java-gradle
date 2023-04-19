@@ -16,7 +16,7 @@ dependencies {
 }
 
 jacocoTestReport {
-    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/reports/jacoco/test/*.xml")
 
     reports {
         xml {
