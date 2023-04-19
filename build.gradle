@@ -16,6 +16,8 @@ dependencies {
 }
 
 jacocoTestReport {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
     reports {
         xml {
             enabled true
@@ -23,6 +25,9 @@ jacocoTestReport {
         html {
             enabled false
         }
+    }
+    doFirst {
+        getExecutionData().from(executionData.findAll { it.exists() })
     }
 }
 
