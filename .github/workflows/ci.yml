@@ -21,9 +21,9 @@ jobs:
       - name: check path
         run: pwd
       - name: find file
-        run: cd build/reports/jacoco
+        run: ls
       - name: check path
-        run: pwd
+        run: cd build/reports
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
