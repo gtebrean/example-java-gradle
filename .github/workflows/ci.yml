@@ -1,5 +1,5 @@
 name: Workflow for Codecov example-java-maven
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -18,6 +18,10 @@ jobs:
           java-version: 1.8
       - name: Install dependencies, run tests, and collect coverage
         run: gradle build
+      - name: check path
+        run: pwd
+      - name: find file
+        run: cd build/reports/jacoco
       - name: check path
         run: pwd
       - name: Upload coverage to Codecov
