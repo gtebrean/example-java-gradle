@@ -23,7 +23,7 @@ jobs:
       - name: find file
         run: ls
       - name: check path
-        run: cd build/reports
+        run: cd build/reports ls
       - name: find file
         run: ls
       - name: Upload coverage to Codecov
